@@ -1,5 +1,6 @@
-import {Component, ContentChildren, InjectMetadata} from 'angular2/core';
+import {Component, Inject} from 'angular2/core';
 import {TodoActions} from './todoActions';
+import {AppStore} from './appStore';
 
 @Component({
   selector: 'todo',
@@ -11,7 +12,7 @@ import {TodoActions} from './todoActions';
     </li>
   `
 })
-@Reflect.metadata('parameters', [[new InjectMetadata('AppStore')]])
+// @Reflect.metadata('parameters', [[new InjectMetadata('AppStore')]])
 export class Todo {
   constructor (appStore) {
     this.appStore = appStore;
@@ -26,3 +27,5 @@ export class Todo {
     this.appStore.dispatch(this.todoActions.removeTodo(id));
   }
 }
+
+Inject(AppStore)(Todo, null, 0);

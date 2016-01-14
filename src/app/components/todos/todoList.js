@@ -1,6 +1,7 @@
-import {Component, InjectMetadata, OnDestroy} from 'angular2/core';
+import {Component, Inject, OnDestroy} from 'angular2/core';
 import {Todo} from './todo';
 import {VisibleTodosPipe} from './visibleTodosPipe';
+import {AppStore} from './appStore';
 
 @Component({
   selector: 'todo-list',
@@ -16,7 +17,6 @@ import {VisibleTodosPipe} from './visibleTodosPipe';
   directives: [Todo],
   pipes: [VisibleTodosPipe]
 })
-@Reflect.metadata('parameters', [[new InjectMetadata('AppStore')]])
 export class TodoList implements OnDestroy {
   constructor (appStore) {
     this.appStore = appStore;
@@ -32,3 +32,5 @@ export class TodoList implements OnDestroy {
     this.unsubscribe();
   }
 }
+
+Inject(AppStore)(TodoList, null, 0);

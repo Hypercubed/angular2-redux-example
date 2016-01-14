@@ -1,16 +1,16 @@
-import {Component, ContentChildren, OnDestroy, OnInit, InjectMetadata} from 'angular2/core';
+import {Component, OnDestroy, OnInit, Inject} from 'angular2/core';
 import {TodoActions} from './todoActions';
+import {AppStore} from './appStore';
 
 @Component({
   selector: 'filter-link',
   inputs: ['filter'],
   template:
-    `<button class="btn btn-link" (click)="applyFilter(filter);"
+    `<button class="btn btn-default btn-sm" (click)="applyFilter(filter);"
         [ngClass]="{'active': active, 'inactive': !active}">` +
       `<ng-content></ng-content>` +
     `</button>`
 })
-@Reflect.metadata('parameters', [[new InjectMetadata('AppStore')]])
 export class FilterLink implements OnInit, OnDestroy {
   constructor (appStore) {
     this.appStore = appStore;
@@ -38,3 +38,5 @@ export class FilterLink implements OnInit, OnDestroy {
     this.active = (this.filter === this.appStore.getState().currentFilter);
   }
 }
+
+Inject(AppStore)(FilterLink, null, 0);

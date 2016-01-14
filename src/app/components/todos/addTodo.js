@@ -1,5 +1,6 @@
-import {Component, InjectMetadata} from 'angular2/core';
+import {Component, Inject} from 'angular2/core';
 import {TodoActions} from './todoActions';
+import {AppStore} from './appStore';
 
 @Component({
   selector: 'add-todo',
@@ -9,7 +10,6 @@ import {TodoActions} from './todoActions';
       <button (click)="addTodo(todo)">Add todo</button>
     </div>`
 })
-@Reflect.metadata('parameters', [[new InjectMetadata('AppStore')]])
 export class AddTodo {
   todoActions = new TodoActions();
 
@@ -22,3 +22,5 @@ export class AddTodo {
     input.value = '';
   }
 }
+
+Inject(AppStore)(AddTodo, null, 0);
