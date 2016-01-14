@@ -1,6 +1,8 @@
-# Angular 2 + JSPM!
+# Angular 2 + Redux + JSPM!
 
-A simple example of Angular 2 using JSPM/SystemJS.
+A simple example of Angular 2 and Redux using JSPM/SystemJS.  Application code based on [Hypercubed/angular2-example](https://github.com/Hypercubed/angular2-example), originally based on [angular2-go](https://github.com/johnpapa/angular2-go) by John Papa.
+
+Angular2/Todo redux code from [Angular 2 — Introduction to Redux](https://medium.com/google-developer-experts/angular-2-introduction-to-redux-1cf18af27e6e#.rvl2d7u6v) by gsans, a port of Todo application from [Getting Started with Redux](https://egghead.io/series/getting-started-with-redux) by Dan Abramov.
 
 This repo is an example of [Angular 2](https://angular.io/) application using [SystemJS](https://github.com/systemjs/systemjs) and [JSPM](http://jspm.io/).  In this example I use NPM for all development tools and build scripts (no gulp or grunt).  The front end resources are installed and managed using JSPM and loaded using SystemJS (the Universal dynamic module loader).  JavaScript resources, styles and templates are dynamically loaded during development and bundled for production using [SystemJS builder](https://github.com/systemjs/builder) via the JSPOM cli.  
 
@@ -22,8 +24,8 @@ Good explanation [here](https://github.com/angularclass/NG6-starter/tree/jspm#ho
 ## Quick start
 
 ```bash
-git clone --depth 1 https://github.com/Hypercubed/angular2-example.git
-cd angular2-example
+git clone --depth 1 https://github.com/Hypercubed/angular2-redux-example
+cd angular2-redux-example
 npm install
 npm start
 ```

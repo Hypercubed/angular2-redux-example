@@ -13,17 +13,7 @@ System.config({
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*",
-    "jspm:*": "jspm_packages/jspm/*",
-    "twitter": "//platform.twitter.com/widgets.js"
-  },
-
-  meta: {
-    "twitter": {
-      "build": false,
-      "scriptLoad": true,
-      "format": "global",
-      "exports": "twttr"
-    }
+    "jspm:*": "jspm_packages/jspm/*"
   },
 
   map: {
@@ -38,6 +28,7 @@ System.config({
     "es6-shim": "npm:es6-shim@0.34.0",
     "es7-reflect-metadata": "npm:es7-reflect-metadata@1.4.0",
     "md": "github:guybedford/system-md@0.0.3",
+    "redux": "npm:redux@3.0.5",
     "rxjs": "npm:rxjs@5.0.0-beta.0",
     "text": "github:systemjs/plugin-text@0.0.2",
     "twitter-text": "npm:twitter-text@1.13.2",
@@ -363,6 +354,9 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
+    },
+    "npm:redux@3.0.5": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:reflect-metadata@0.1.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",

@@ -6,7 +6,7 @@ import './main.css!';
 import template from './main.html!text';
 
 import {AboutComponent} from './components/about/about';
-import {DashboardComponent} from './components/dashboard/dashboard';
+import {TodosComponent} from './components/todos/app';
 
 @Component({
   selector: 'my-app',
@@ -14,9 +14,7 @@ import {DashboardComponent} from './components/dashboard/dashboard';
   directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-  {path: '/', name: 'Dashboard', component: DashboardComponent, useAsDefault: true},
-  {path: '/about', name: 'About', component: AboutComponent}
+  {path: '/about', name: 'About', component: AboutComponent},
+  {path: '/', name: 'Todos', component: TodosComponent, useAsDefault: true}
 ])
-export class AppComponent {
-
-}
+export class AppComponent {}
