@@ -31,7 +31,6 @@ System.config({
     "redux": "npm:redux@3.0.5",
     "rxjs": "npm:rxjs@5.0.0-beta.0",
     "text": "github:systemjs/plugin-text@0.0.2",
-    "twitter-text": "npm:twitter-text@1.13.2",
     "zone.js": "npm:zone.js@0.5.10",
     "github:guybedford/system-md@0.0.3": {
       "showdown": "github:showdownjs/showdown@1.3.0"
