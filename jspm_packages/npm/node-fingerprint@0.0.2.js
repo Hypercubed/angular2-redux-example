@@ -1,0 +1,1 @@
+module.exports = require("npm:node-fingerprint@0.0.2/dist/index.js");

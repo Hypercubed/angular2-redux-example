@@ -1,0 +1,1 @@
+module.exports = require("npm:redux-localstorage@0.4.0/lib/persistState.js");

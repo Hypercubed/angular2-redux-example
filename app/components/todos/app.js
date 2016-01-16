@@ -1,25 +1,23 @@
 // our root app component
-import {Component, provide} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {AddTodo} from './addTodo';
 import {TodoList} from './todoList';
 import {Filters} from './filters';
+import {AppStore} from '../../stores/appStore';
+import {TodoActions} from '../../stores/todoActions';
 
-import {createStore} from 'redux';
-import {rootReducer} from './rootReducer';
-
-const appStore = createStore(rootReducer);
+import 'todomvc-app-css/index.css!';
+import './style.css!';
 
 @Component({
   selector: 'root',
   template:
-    `<div>
+    `<div class="todoapp">
       <add-todo></add-todo>
       <todo-list></todo-list>
       <filters></filters>
     </div>`,
   directives: [AddTodo, TodoList, Filters],
-  providers: [
-    provide('AppStore', {useValue: appStore})
-  ]
+  providers: [AppStore, TodoActions]
 })
 export class TodosComponent { }

@@ -1,0 +1,50 @@
+{
+  "name": "redux-logger",
+  "version": "2.3.2",
+  "description": "Logger for redux",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "$(npm bin)/eslint src",
+    "test": "npm run lint",
+    "clean": "$(npm bin)/rimraf dist lib",
+    "build:lib": "$(npm bin)/babel src --out-dir lib",
+    "build:umd": "LIBRARY_NAME=reduxLogger NODE_ENV=development $(npm bin)/webpack src/index.js dist/index.js --config webpack.build.js",
+    "build:umd:min": "LIBRARY_NAME=reduxLogger NODE_ENV=production $(npm bin)/webpack -p src/index.js dist/index.min.js --config webpack.build.js",
+    "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "prepublish": "npm run clean && npm run test && npm run build"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcomb/redux-logger.git"
+  },
+  "keywords": [
+    "redux",
+    "logger",
+    "redux-logger",
+    "redux",
+    "middleware"
+  ],
+  "author": "Eugene Rodionov (https://github.com/theaqua)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fcomb/redux-logger/issues"
+  },
+  "homepage": "https://github.com/fcomb/redux-logger#readme",
+  "devDependencies": {
+    "@dtrussia/eslint-config-dtrussia": "1.0.3",
+    "babel-cli": "6.3.13",
+    "babel-core": "6.3.13",
+    "babel-loader": "6.2.0",
+    "babel-plugin-add-module-exports": "0.1.1",
+    "babel-preset-es2015": "6.3.13",
+    "babel-preset-react": "6.3.13",
+    "babel-preset-stage-0": "6.3.13",
+    "rimraf": "2.4.4",
+    "webpack": "1.12.9"
+  }
+}

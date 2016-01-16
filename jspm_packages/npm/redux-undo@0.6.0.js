@@ -1,0 +1,1 @@
+module.exports = require("npm:redux-undo@0.6.0/lib/index.js");

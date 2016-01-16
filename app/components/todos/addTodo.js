@@ -1,24 +1,28 @@
-import {Component, InjectMetadata} from 'angular2/core';
-import {TodoActions} from './todoActions';
+import {Component} from 'angular2/core';
+import {TodoActions} from '../../stores/todoActions';
+import {AppStore} from '../../stores/appStore';
 
 @Component({
   selector: 'add-todo',
   template:
-    `<div>
-      <input #todo>
-      <button (click)="addTodo(todo)">Add todo</button>
+    `<div class="header">
+      <h1>todos</h1>
+      <input #todo (keyup.enter)="addTodo(todo)" class="new-todo" placeholder="What needs to be done?" autofocus>
     </div>`
 })
-@Reflect.metadata('parameters', [[new InjectMetadata('AppStore')]])
 export class AddTodo {
-  todoActions = new TodoActions();
-
-  constructor (appStore) {
+  constructor (appStore, todoActions) {
     this.appStore = appStore;
+    this.todoActions = todoActions;
   }
 
   addTodo (input) {
-    this.appStore.dispatch(this.todoActions.addTodo(input.value));
-    input.value = '';
+    const text = input.value.trim();
+    if (text.length !== 0) {
+      this.appStore.dispatch(this.todoActions.addTodo(input.value));
+      input.value = '';
+    }
   }
 }
+
+AddTodo.parameters = [AppStore, TodoActions];
