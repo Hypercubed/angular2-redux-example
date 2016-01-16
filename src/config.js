@@ -20,17 +20,21 @@ System.config({
     "angular2": "npm:angular2@2.0.0-beta.0",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
-    "bootstrap": "github:twbs/bootstrap@3.3.5",
     "clean-css": "npm:clean-css@3.4.4",
     "core-js": "npm:core-js@1.2.6",
     "css": "github:systemjs/plugin-css@0.1.17",
+    "cuid": "npm:cuid@1.3.8",
     "es6-promise": "npm:es6-promise@3.0.2",
     "es6-shim": "npm:es6-shim@0.34.0",
     "es7-reflect-metadata": "npm:es7-reflect-metadata@1.4.0",
     "md": "github:guybedford/system-md@0.0.3",
     "redux": "npm:redux@3.0.5",
+    "redux-localstorage": "npm:redux-localstorage@0.4.0",
+    "redux-logger": "npm:redux-logger@2.3.2",
+    "redux-undo": "npm:redux-undo@0.6.0",
     "rxjs": "npm:rxjs@5.0.0-beta.0",
     "text": "github:systemjs/plugin-text@0.0.2",
+    "todomvc-app-css": "npm:todomvc-app-css@2.0.4",
     "zone.js": "npm:zone.js@0.5.10",
     "github:guybedford/system-md@0.0.3": {
       "showdown": "github:showdownjs/showdown@1.3.0"
@@ -84,9 +88,6 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
-    },
-    "github:twbs/bootstrap@3.3.5": {
-      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:amdefine@1.0.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -246,6 +247,13 @@ System.config({
       "public-encrypt": "npm:public-encrypt@4.0.0",
       "randombytes": "npm:randombytes@2.0.1"
     },
+    "npm:cuid@1.3.8": {
+      "browser-fingerprint": "npm:browser-fingerprint@0.0.1",
+      "core-js": "npm:core-js@1.2.6",
+      "node-fingerprint": "npm:node-fingerprint@0.0.2",
+      "os": "github:jspm/nodelibs-os@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:des.js@1.0.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "inherits": "npm:inherits@2.0.1",
@@ -300,6 +308,10 @@ System.config({
       "bn.js": "npm:bn.js@4.6.1",
       "brorand": "npm:brorand@1.0.5"
     },
+    "npm:node-fingerprint@0.0.2": {
+      "os": "github:jspm/nodelibs-os@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:os-browserify@0.1.2": {
       "os": "github:jspm/nodelibs-os@0.1.0"
     },
@@ -353,6 +365,9 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
+    },
+    "npm:redux-undo@0.6.0": {
+      "redux": "npm:redux@3.0.5"
     },
     "npm:redux@3.0.5": {
       "process": "github:jspm/nodelibs-process@0.1.2"

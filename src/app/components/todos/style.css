@@ -1,3 +1,7 @@
-todo {
-  cursor: pointer;
+.footer {
+  box-sizing: content-box;
+}
+
+button, input[type="checkbox"] {
+  outline: none;
 }

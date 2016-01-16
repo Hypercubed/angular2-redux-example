@@ -1,21 +1,23 @@
-import {Component, OnDestroy, OnInit, Inject} from 'angular2/core';
-import {TodoActions} from './todoActions';
-import {AppStore} from './appStore';
+import {Component, OnDestroy, OnInit} from 'angular2/core';
+import {TodoActions} from '../../stores/todoActions';
+import {AppStore} from '../../stores/appStore';
 
 @Component({
   selector: 'filter-link',
   inputs: ['filter'],
   template:
-    `<button class="btn btn-default btn-sm" (click)="applyFilter(filter);"
-        [ngClass]="{'active': active, 'inactive': !active}">` +
-      `<ng-content></ng-content>` +
-    `</button>`
+    `<li>
+      <a href="#/" (click)="applyFilter(filter);"
+          [ngClass]="{'selected': active, 'inactive': !active}">
+        <ng-content></ng-content>
+      </a>
+    </li>`
 })
 export class FilterLink implements OnInit, OnDestroy {
   constructor (appStore) {
     this.appStore = appStore;
     this.todoActions = new TodoActions();
-    this.unsubscribe = this.appStore
+    this.unsubscribe = appStore
       .subscribe(() => this.updateActive());
   }
 
@@ -39,4 +41,4 @@ export class FilterLink implements OnInit, OnDestroy {
   }
 }
 
-Inject(AppStore)(FilterLink, null, 0);
+FilterLink.parameters = [AppStore];
