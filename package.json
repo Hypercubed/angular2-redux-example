@@ -9,7 +9,8 @@
     "check": "semistandard src/app/**/*.js",
     "bundle": "jspm bundle app --inject --minify",
     "unbundle": "jspm unbundle && rm src/build.*",
-    "deploy": "npm run bundle && gh-pages -d src && npm run unbundle"
+    "copy": "cp README.md src/app/components/about/about.md",
+    "deploy": "npm run copy && npm run bundle && gh-pages -d src && npm run unbundle"
   },
   "dependencies": {},
   "semistandard": {
